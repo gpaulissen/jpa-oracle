@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @SpringBootApplication
-@EnableJpaRepositories("com.example.todocrud.*")
-@ComponentScan(basePackages = { "com.example.todocrud.*" })
+//@EnableJpaRepositories("com.example.todocrud.*")
+//@ComponentScan(basePackages = { "com.example.todocrud.*" })
 //@EntityScan("com.example.todocrud.*")   
 public class App 
 {
