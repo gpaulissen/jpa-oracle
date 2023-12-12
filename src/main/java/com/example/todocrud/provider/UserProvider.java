@@ -9,7 +9,7 @@ import org.springframework.util.Assert;
 
 @Component
 @ConfigurationProperties("app1")
-public class SecurityContextHolderUserProvider implements ConnectionUsernameProvider {
+public class UserProvider implements ConnectionUsernameProvider {
 
     @NotNull
     private String schema;

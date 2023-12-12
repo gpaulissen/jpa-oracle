@@ -1,26 +1,26 @@
 package com.example.todocrud.configuration;
 
-// import org.springframework.stereotype.Component;
-
 import java.sql.SQLException;
 import javax.sql.DataSource;
 import javax.validation.constraints.NotNull;
+
 import oracle.jdbc.pool.OracleDataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jdbc.support.ConnectionUsernameProvider;
 import org.springframework.data.jdbc.support.oracle.ProxyDataSource;
 import org.springframework.util.Assert;
 
-import com.example.todocrud.provider.SecurityContextHolderUserProvider;
     
 @Configuration
 @ConfigurationProperties("oracle")
 public class OracleConfiguration {
     @Autowired
-    private ConnectionUsernameProvider contextProvider; // = new SecurityContextHolderUserProvider();
+    private ConnectionUsernameProvider contextProvider;
 
     @NotNull
     private String username;
