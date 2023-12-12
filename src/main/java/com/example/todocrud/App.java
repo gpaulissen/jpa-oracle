@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.boot.SpringApplication;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * Hello world!
@@ -13,8 +15,12 @@ import org.springframework.boot.SpringApplication;
 @SpringBootApplication
 public class App 
 {
+    Logger logger = LoggerFactory.getLogger(App.class);
+    
     @RequestMapping("/")
     String home() {
+        logger.info("home");
+        
         return "Hello World!";
     }
 
