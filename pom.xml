@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.9</version>
+    <version>3.2.0</version>
   </parent>
   
   <groupId>com.example.todocrud</groupId>
@@ -20,14 +20,52 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
     <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
     <maven.minimum.version>3.6.1</maven.minimum.version>
-    <spring.version>2.7.9</spring.version>
+    <spring.version>3.2.0</spring.version>
+    <spring-data-jdbc-ext.version>2.0.0.M1</spring-data-jdbc-ext.version>
+    <spring-data-jdbc.version>3.2.0</spring-data-jdbc.version>   
     <oracle-spring-boot-starter-ucp.version>23.4.0</oracle-spring-boot-starter-ucp.version>
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
+
+  <!--pluginRepositories>
+    <pluginRepository>
+      <id>mavencentral</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>spring-snapshots</id>
+      <url>https://repo.spring.io/snapshot</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>spring-milestones</id>
+      <url>https://repo.spring.io/milestone</url>
+    </pluginRepository>
+  </pluginRepositories-->
+
+  <!--repositories>
+    <repository>
+      <id>mavencentral</id>
+      <name>Maven Central</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/libs-milestone</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories-->
 
   <dependencies>
     <dependency>
@@ -52,12 +90,31 @@
     </dependency>
 
     <!-- Spring Boot -->
-    <!--dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot</artifactId>
       <version>${spring.version}</version>
-    </dependency-->
+    </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jdbc-ext -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jdbc</artifactId>
+      <version>${spring-data-jdbc.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jdbc-ext</artifactId>
+      <version>${spring-data-jdbc-ext.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+      <version>3.2.0-M1</version>
+    </dependency>
+    
     <dependency>
       <groupId>com.oracle.database.spring</groupId>
       <artifactId>oracle-spring-boot-starter-ucp</artifactId>
@@ -138,6 +195,10 @@
       <plugin>
         <!-- enforce the Maven version always -->
         <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
