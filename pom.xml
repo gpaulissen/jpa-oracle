@@ -56,11 +56,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-jdbc-ext</artifactId>
       <version>${spring-data-jdbc-ext.version}</version>
