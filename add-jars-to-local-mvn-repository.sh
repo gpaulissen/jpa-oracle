@@ -4,6 +4,7 @@ set -eu
 
 ENDOFLIST=
 set spring-data-jdbc-core-2.0.0.M1.jar:org.springframework.data:spring-data-jdbc-ext:2.0.0.M1 \
+    spring-data-oracle-2.0.0.M1.jar:org.springframework.data:jdbc-support-oracle:2.0.0.M1 \
     ${ENDOFLIST}
 
 home=$(cd && pwd)
